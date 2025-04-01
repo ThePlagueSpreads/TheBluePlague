@@ -53,7 +53,7 @@ public static class SplashTextManager
         "February 31st 2024",
         "I was threatened and forced to put these here, somebody help me please",
         "Boat goes binted",
-        "Oh yeah the name of the turtle-like thing in TRP that leads you to places is the 'Hippopenomenon'",
+        "Oh the name of the turtle-like thing that you follow is 'Hippopenomenon'",
         "A group of them is called a Hippopenomena."
     };
 

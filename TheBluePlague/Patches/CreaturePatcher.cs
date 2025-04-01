@@ -10,6 +10,7 @@ public static class CreaturePatcher
     [HarmonyPostfix]
     public static void StartPostfix(Creature __instance)
     {
-        Object.Destroy(__instance.gameObject);
+        if (NothingManager.NothingActive)
+            Object.Destroy(__instance.gameObject);
     }
 }

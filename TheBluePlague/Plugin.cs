@@ -98,16 +98,6 @@ public class Plugin : BaseUnityPlugin
                 Application.Quit();
             },
             button => { button.GetComponentsInChildren<Image>().ForEach(i => i.color = Color.red); });
-        MainMenuButtonUtils.RegisterButton("Red Plague Act Blue", () =>
-            {
-                BluePlagueManager.IsBluePlagueActive = true;
-                uGUI_MainMenu.main.OnButtonSurvival();
-            },
-            button =>
-            {
-                button.GetComponentsInChildren<Image>().ForEach(i => i.color = Color.black);
-                button.GetComponentInChildren<TextMeshProUGUI>().color = new Color(0.2f, 0.4f, 1f);
-            });
         MainMenuButtonUtils.RegisterButton("Nightnautica", () => { uSkyManager.main.Timeline = 5; });
 
         MainMenuButtonUtils.RegisterButton("Nothing", () =>
@@ -153,6 +143,16 @@ public class Plugin : BaseUnityPlugin
                 go.EnsureComponent<FakeWaterPhysics>();
             }
         });
+        MainMenuButtonUtils.RegisterButton("Red Plague Act Blue", () =>
+            {
+                BluePlagueManager.IsBluePlagueActive = true;
+                uGUI_MainMenu.main.OnButtonSurvival();
+            },
+            button =>
+            {
+                button.GetComponentsInChildren<Image>().ForEach(i => i.color = Color.black);
+                button.GetComponentInChildren<TextMeshProUGUI>().color = new Color(0.2f, 0.4f, 1f);
+            });
     }
 
     private static string ObfuscateText(string text)
