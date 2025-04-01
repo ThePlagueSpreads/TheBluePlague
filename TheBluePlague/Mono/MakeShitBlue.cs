@@ -14,7 +14,7 @@ public class MakeShitBlue : MonoBehaviour
             return;
         }
         
-        _timeUpdateAgain = Time.time + 1.3f;
+        _timeUpdateAgain = Time.time + 0.3f;
         Blueify();
     }
 
@@ -32,6 +32,29 @@ public class MakeShitBlue : MonoBehaviour
             if (identifier == null)
                 continue;
             MakeBlue(identifier.gameObject);
+        }
+        
+        BlueifyTerrain();
+    }
+
+    private static void BlueifyTerrain()
+    {
+        var levels = LargeWorld.main.streamer.streamerV2.clipmapStreamer.levels;
+
+        foreach (var level in levels)
+        {
+            foreach (var cell in level.cells)
+            {
+                if (cell.chunk == null) continue;
+
+                IVoxelandChunk2 voxelandChunk = cell.chunk;
+                
+                foreach (var layer in voxelandChunk.hiRenders)
+                {
+                    if (layer == null) continue;
+                    MakeBlue(layer.gameObject);
+                }
+            }
         }
     }
 
