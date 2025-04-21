@@ -9,3 +9,10 @@ This is a silly April Fools' Day mod designed to be a short, absurd and confusin
 - Custom main menu buttons
 - Water fog modifications
 - Basic asset bundle usage
+
+# Credits
+#### Published by The Plague Spreads
+- Concept: Dreamanchik
+- Programming: Lee23
+- Sound design: al
+- Splash text: Lilly
